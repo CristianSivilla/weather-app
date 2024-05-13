@@ -439,3 +439,14 @@ body {
 .offcanvas-close{
   background-color: white !important;
 }
+
+#tabla-lugares {
+  background-color: #343a40; 
+  color: #ffffff;
+}
+
+#map{
+  height: 400px;
+}
+
+

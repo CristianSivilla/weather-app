@@ -15,6 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" \
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" \ crossorigin="anonymous">
 
+    <!-- API Leaflet -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- Favicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <meta name="theme-color" content="#712cf9">
@@ -344,33 +348,33 @@
         </main>
 
         <!-- LOGIN MODAL -->
-            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="loginModalLabel">Log in</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="inputUser" class="form-label">User</label>
-                                    <input type="text" class="form-control" id="inputUser" name="user">
-                                    <div id="inputUserHelp" class="form-text">We'll never share your username with anyone
-                                        else.</div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword" name="password">
-                                </div>
-                                <button type="button" class="button-login btn btn-primary" name="login">Entra</button>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                        </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Log in</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="inputUser" class="form-label">User</label>
+                                <input type="text" class="form-control" id="inputUser" name="user">
+                                <div id="inputUserHelp" class="form-text">We'll never share your username with anyone
+                                    else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" name="password">
+                            </div>
+                            <button type="button" class="button-login btn btn-primary" name="login">Entra</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
                     </div>
                 </div>
             </div>
+        </div>
 
         <!-- UPLOAD PHOTO MODAL -->
         <div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-labelledby="uploadPhotoLabel"
@@ -408,7 +412,8 @@
             aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                <button type="button" class="btn-close offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close offcanvas-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-row align-items-center justify-content-evenly">
                 <!-- Location card -->
@@ -421,7 +426,7 @@
                         </h6>
                         <h6 class="card-title my-4">Longitude:
                             <span id="offcanvas-lon"></span>
-                        </h6> 
+                        </h6>
                     </div>
                 </div>
                 <!-- Carousel -->
@@ -445,6 +450,38 @@
             </div>
         </div>
 
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div id="map" class="rounded"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="tabla-lugares" class="container mt-md-0 mt-5">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table id="tabla-lugares" class="table table-sm table-dark table-lg my-custom-table">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Nom</th>
+                                            <th>Temperatura Actual</th>
+                                            <th>Accions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <footer class="w-100 mt-3 text-white-50 d-flex flex-columns justify-content-around">
             <span>ETP XAVIER CFGS DAW M6-M7 2023/2024</span>
             <span>Dades ofertes per <a target="_blank" href="https://open-meteo.com/">Open-Meteo.com</a></span>
@@ -457,5 +494,7 @@
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./script.js" type="module"></script>
+<script type="module" src="scripts/mapa_weather.js"></script>
+<script type="module" src="scripts/favorits_tabla.js"></script>
 
 </html>

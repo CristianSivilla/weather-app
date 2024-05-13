@@ -24,7 +24,7 @@ function getPhotos(){
 
         $dbservername = "localhost";
         $dbusername = "root";
-        $dbpassword = "claumestra";
+        $dbpassword = "";
         $dbname = "weatherapp";
 
         $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
@@ -59,7 +59,7 @@ function storePhoto()
 
         $dbservername = "localhost";
         $dbusername = "root";
-        $dbpassword = "claumestra";
+        $dbpassword = "";
         $dbname = "weatherapp";
 
         $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
@@ -94,7 +94,7 @@ function getFavorite()
 
         $dbservername = "localhost";
         $dbusername = "root";
-        $dbpassword = "claumestra";
+        $dbpassword = "";
         $dbname = "weatherapp";
 
         $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
@@ -127,7 +127,7 @@ function addFavorite()
 
         $dbservername = "localhost";
         $dbusername = "root";
-        $dbpassword = "claumestra";
+        $dbpassword = "";
         $dbname = "weatherapp";
 
         $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
